@@ -1,7 +1,7 @@
 version: "2.1"
 services:
   jobmanager:
-    image: my_flink:0.2-s1
+    image: my_flink:1.7.2-s4-2gb
     expose:
       - "6123"
     ports:
@@ -11,7 +11,7 @@ services:
       - JOB_MANAGER_RPC_ADDRESS=jobmanager
 
   taskmanager:
-    image: my_flink:0.2-s1
+    image: my_flink:1.7.2-s4-2gb
     expose:
       - "6121"
       - "6122"

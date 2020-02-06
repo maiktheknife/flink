@@ -1,4 +1,6 @@
-FROM flink:1.7.2-hadoop28
+ARG version=x
+
+FROM flink:${version}
 LABEL maintainer="maiktheknife@gmail.com"
 
 ARG slots=1
@@ -12,7 +14,7 @@ COPY app/flink-conf-${slots}.yaml /opt/flink/conf/flink-conf.yaml
 RUN chown flink:flink /opt/flink/conf/flink-conf.yaml
 RUN chmod 644 /opt/flink/conf/flink-conf.yaml
 
-#RUN apt-get update 
+#RUN apt-get update
 #RUN apt-get install -y python3
 #RUN apt-get clean
 
